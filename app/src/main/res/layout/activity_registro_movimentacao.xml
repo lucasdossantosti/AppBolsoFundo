@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.RegistroMovimentacaoActivity">
+
+    <EditText
+        android:id="@+id/activity_registro_movimentacao_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="textCapWords"
+        android:hint="Título" />
+
+    <EditText
+        android:id="@+id/activity_registro_movimentacao_descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Decrição"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/activity_registro_movimentacao_data_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="datetime"
+        android:hint="Data Registro" />
+
+    <EditText
+        android:id="@+id/activity_registro_movimentacao_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="numberDecimal"
+        android:hint="Valor" />
+
+    <CheckBox
+        android:id="@+id/activity_registro_movimentacao_receita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Estou registando uma receita"/>
+
+    <Button
+        android:id="@+id/activity_registro_movimentacao_botao_salvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"/>
+</LinearLayout>
