@@ -18,6 +18,8 @@ import app.bolsofundo.model.Movimentacao;
 
 public class RegistroMovimentacaoActivity extends AppCompatActivity {
 
+    MovimentacaoDAO movimentacaoDAO = new MovimentacaoDAO();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,15 +46,19 @@ public class RegistroMovimentacaoActivity extends AppCompatActivity {
                     throw new RuntimeException(e);
                 }
 
+                if(dataRegistro == null){
+                    dataRegistro = new Date();
+                }
+
                 float valor = Float.parseFloat(campoValor.getText().toString());
-                boolean receita = Boolean.parseBoolean(campoReceita.getText().toString());
+                boolean isReceita = false;
 
                 //Se a movimentação não for do tipo receita, só pode ser despesa, portanto o valor deve ser negativo.
-                if(receita == false){
+                if(!campoReceita.isChecked()){
                     valor = valor * (-1);
+                    isReceita = true;
                 }
-                Movimentacao novaMovimentacao = new Movimentacao(titulo, descricao, dataRegistro, valor, receita);
-                MovimentacaoDAO movimentacaoDAO = new MovimentacaoDAO();
+                Movimentacao novaMovimentacao = new Movimentacao(titulo, descricao, dataRegistro, valor, isReceita);
                 movimentacaoDAO.salvar(novaMovimentacao);
                 finish();
             }

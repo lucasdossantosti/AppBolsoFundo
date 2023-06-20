@@ -2,9 +2,10 @@ package app.bolsofundo.model;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Movimentacao {
+public class Movimentacao implements Serializable {
 
     private final String titulo, descricao;
     private final Date dataRegistro;
